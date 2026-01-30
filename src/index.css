@@ -19,3 +19,48 @@
   animation-play-state: paused;
   cursor: pointer;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #ffffff;
+  --text-main: #111827;
+  --card-bg: #ffffff;
+  --border-color: #f3f4f6;
+}
+
+.dark {
+  --bg-main: #030712;   /* Qop-qora fon */
+  --text-main: #f9fafb;  /* Oq matn */
+  --card-bg: #111827;    /* Biroz ochroq qora (karta uchun) */
+  --border-color: #1f2937;
+}
+
+/* Butun sayt uchun majburiy ranglar */
+body {
+  background-color: var(--bg-main) !important;
+  color: var(--text-main) !important;
+  transition: all 0.3s ease;
+}
+
+/* Marquee Animatsiyasi */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-infinite {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+/* Agar Tailwind dark: klassi ishlamasa, mana bu yordam beradi */
+.dark .text-gray-900, .dark .text-gray-800 {
+  color: var(--text-main) !important;
+}
+
+.dark .bg-white {
+  background-color: var(--bg-main) !important;
+}

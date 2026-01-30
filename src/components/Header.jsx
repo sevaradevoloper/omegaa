@@ -1,58 +1,54 @@
 import React, { useState, useEffect } from 'react';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
-import { FiChevronDown, FiMoon, FiSun } from 'react-icons/fi';
+import { FiChevronDown, FiMoon, FiSun, FiGlobe } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(localStorage.getItem('theme') === 'dark');
-  const [lang, setLang] = useState('EN');
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
+    const root = window.document.documentElement;
     if (isDark) {
-      document.documentElement.classList.add('dark');
+      root.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      root.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
   }, [isDark]);
 
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem("lang", lng);
+  };
+
   const navLinks = [
-    { title: 'Demos', dropdown: ['SaaS Landing', 'Startup Landing', 'App Landing', 'Desktop Landing'] },
-    { title: 'Pages', dropdown: ['About', 'Pricing', 'Contact'] },
-    { title: 'Support', dropdown: null },
+    { title: t('demos'), dropdown: ['SaaS Landing', 'Startup Landing'] },
+    { title: t('pages'), dropdown: ['About', 'Pricing'] },
+    { title: t('support'), dropdown: null },
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-[100] bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-all duration-300">
+    <header className="fixed top-0 left-0 w-full z-[100] bg-[var(--header-bg)] backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
         {/* Logo */}
-        <div className="text-2xl font-black tracking-tighter dark:text-white">
-          Omega
-        </div>
+        <div className="text-2xl font-black tracking-tighter dark:text-white">Omega</div>
 
-        {/* Desktop Navigation (Center) */}
+        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link, idx) => (
-            <div 
-              key={idx} 
-              className="relative group"
-              onMouseEnter={() => setActiveDropdown(idx)}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button className="flex items-center gap-1 text-sm font-bold text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors">
-                {link.title} {link.dropdown && <FiChevronDown className={`transition-transform ${activeDropdown === idx ? 'rotate-180' : ''}`} />}
+            <div key={idx} className="relative group" onMouseEnter={() => setActiveDropdown(idx)} onMouseLeave={() => setActiveDropdown(null)}>
+              <button className="flex items-center gap-1 text-sm font-bold hover:text-blue-600 transition-colors dark:text-gray-300">
+                {link.title} {link.dropdown && <FiChevronDown />}
               </button>
-
-              {/* Dropdown Menu */}
               {link.dropdown && activeDropdown === idx && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 shadow-2xl rounded-2xl p-4 border border-gray-100 dark:border-gray-700 animate-in fade-in slide-in-from-top-2">
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-xl rounded-xl p-2 border border-gray-100 dark:border-gray-700">
                   {link.dropdown.map((item, i) => (
-                    <a key={i} href="#" className="block py-2 px-4 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-all">
-                      {item}
-                    </a>
+                    <a key={i} href="#" className="block py-2 px-4 text-sm hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg">{item}</a>
                   ))}
                 </div>
               )}
@@ -60,36 +56,47 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Right Actions (Dark, Lang, Button) */}
-        <div className="hidden lg:flex items-center gap-5">
-          {/* Theme Toggle */}
-          <button onClick={() => setIsDark(!isDark)} className="p-2 rounded-xl bg-gray-50 dark:bg-gray-800 dark:text-white hover:scale-110 transition-all">
+        {/* Right Section */}
+        <div className="hidden lg:flex items-center gap-4">
+          <button onClick={() => setIsDark(!isDark)} className="p-2 rounded-xl bg-gray-400 dark:bg-gray-100 dark:text-white">
             {isDark ? <FiSun /> : <FiMoon />}
           </button>
 
-          {/* Lang Toggle */}
-          <button onClick={() => setLang(lang === 'EN' ? 'UZ' : 'EN')} className="text-xs font-black dark:text-white border-b-2 border-blue-500">
-            {lang}
-          </button>
+          {/* Language Selector */}
+          <div className="relative group p-2 flex items-center gap-1 cursor-pointer font-bold text-xs dark:text-white border dark:border-gray-700 rounded-lg">
+            <FiGlobe /> {i18n.language.toUpperCase()}
+            <div className="absolute top-full right-0 mt-2 w-20 bg-white dark:bg-gray-800 hidden group-hover:block border rounded-lg shadow-lg">
+              {['en', 'uz', 'ru'].map(l => (
+                <button key={l} onClick={() => changeLanguage(l)} className="block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 uppercase">{l}</button>
+              ))}
+            </div>
+          </div>
 
-          <button className="bg-red-500 hover:bg-red-600 text-white px-7 py-3 rounded-xl font-bold text-sm shadow-lg shadow-red-500/30 transition-all active:scale-95">
-            Get Started
+          <button className="bg-red-500 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-red-600 transition-all">
+            {t('btn')}
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Toggle */}
         <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-3xl dark:text-white">
           {isOpen ? <HiX /> : <HiMenuAlt3 />}
         </button>
       </div>
 
-      {/* Mobile Menu Drawer */}
-      {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 p-6 flex flex-col gap-6 animate-in slide-in-from-top duration-300">
-           {/* Mobile links logic... */}
-           <button className="w-full bg-red-500 text-white py-4 rounded-xl font-bold">Get Started</button>
+      {/* Mobile Menu - To'liq tushadigan variant */}
+      <div className={`lg:hidden fixed inset-0 top-20 bg-white dark:bg-gray-900 z-[90] transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="p-8 flex flex-col gap-6">
+          {navLinks.map((link, i) => (
+            <button key={i} className="text-left text-2xl font-bold dark:text-white border-b pb-2 dark:border-gray-800">{link.title}</button>
+          ))}
+          <div className="flex gap-4 mt-4">
+            {['en', 'uz', 'ru'].map(l => (
+              <button key={l} onClick={() => changeLanguage(l)} className={`px-4 py-2 rounded-lg border dark:text-white ${i18n.language === l ? 'bg-blue-600 text-white' : ''}`}>{l.toUpperCase()}</button>
+            ))}
+          </div>
+          <button className="w-full bg-red-500 text-white py-4 rounded-xl font-bold mt-4">{t('btn')}</button>
         </div>
-      )}
+      </div>
     </header>
   );
 };
