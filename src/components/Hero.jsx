@@ -30,13 +30,13 @@ const Hero = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <button className="w-[400px] mb-5 sm:w-auto bg-red-500 hover:bg-red-600 text-white px-10 py-5 rounded-2xl font-black shadow-2xl shadow-red-500/40 transition-all hover:-translate-y-1">
+                        <button className="w-[400px]  mb-5 sm:w-auto bg-red-500 hover:bg-red-600 text-white px-10 py-5 rounded-2xl font-black shadow-2xl shadow-red-500/40 transition-all hover:-translate-y-1">
                             {t('hero.getStarted')}
                         </button>
 
                         <button
                             onClick={() => setShowVideo(true)}
-                            className="flex items-center gap-3 font-bold text-gray-700 dark:text-gray-300 group transition-all"
+                            className="flex mb-5 items-center gap-3 font-bold text-gray-700 dark:text-gray-300 group transition-all"
                         >
                             <span className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-blue-600 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-lg shadow-blue-600/20">
                                 ▶
@@ -73,6 +73,18 @@ const Hero = () => {
                     <img src={BrandLogos3} alt="L3" className="h-8 md:h-10 object-contain" />
                     <img src={BrandLogos4} alt="L4" className="h-8 md:h-10 object-contain" />
                     <img src={BrandLogos5} alt="L5" className="h-8 md:h-10 object-contain" />
+                    {/* Repeat for seamless loop */}
+                    <img src={BrandLogos1} alt="L1" className="h-8 md:h-10 object-contain" />
+                    <img src={BrandLogos2} alt="L2" className="h-8 md:h-10 object-contain" />
+                    <img src={BrandLogos3} alt="L3" className="h-8 md:h-10 object-contain" />
+                    <img src={BrandLogos4} alt="L4" className="h-8 md:h-10 object-contain" />
+                    <img src={BrandLogos5} alt="L5" className="h-8 md:h-10 object-contain" />
+                    {/* Repeat for seamless loop */}
+                    <img src={BrandLogos1} alt="L1" className="h-8 md:h-10 object-contain" />
+                    <img src={BrandLogos2} alt="L2" className="h-8 md:h-10 object-contain" />
+                    <img src={BrandLogos3} alt="L3" className="h-8 md:h-10 object-contain" />
+                    <img src={BrandLogos4} alt="L4" className="h-8 md:h-10 object-contain" />
+                    <img src={BrandLogos5} alt="L5" className="h-8 md:h-10 object-contain" />
                 </div>
             </div>
 
@@ -86,10 +98,10 @@ const Hero = () => {
                         >
                             ✕
                         </button>
-                        <iframe
+                       <iframe
                             className="w-full h-full"
-                            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                            title="YouTube video player"
+                            src="https://www.youtube.com/embed/iNyUmbmQQZg?autoplay=1"
+                            title="Is it normal to talk to yourself?"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen

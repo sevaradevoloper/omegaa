@@ -84,7 +84,7 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden fixed inset-0 top-20 bg-white dark:bg-gray-900 z-[90] transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`lg:hidden bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl fixed inset-0 top-20  z-[90] transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="p-8 flex flex-col gap-6">
           {navLinks.map((link, i) => (
             <button key={i} className="text-left text-2xl font-bold dark:text-white border-b pb-2 dark:border-gray-800">{link.title}</button>
