@@ -1,0 +1,15 @@
+{
+  "header": {
+    "demos": "Demos",
+    "pages": "Pages",
+    "support": "Support",
+    "btn": "Get Started"
+  },
+  "hero": {
+    "title": "Redesigned, how you build",
+    "subtitle": "landing page!",
+    "description": "Create custom landing pages with Omega that convert more visitors than any website.",
+    "getStarted": "Get Started",
+    "watchVideo": "Watch the intro video"
+  }
+}

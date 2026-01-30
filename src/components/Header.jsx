@@ -26,9 +26,9 @@ const Header = () => {
   };
 
   const navLinks = [
-    { title: t('demos'), dropdown: ['SaaS Landing', 'Startup Landing'] },
-    { title: t('pages'), dropdown: ['About', 'Pricing'] },
-    { title: t('support'), dropdown: null },
+    { title: t('header.demos'), dropdown: ['SaaS Landing', 'Startup Landing'] },
+    { title: t('header.pages'), dropdown: ['About', 'Pricing'] },
+    { title: t('header.support'), dropdown: null },
   ];
 
   return (
@@ -64,7 +64,7 @@ const Header = () => {
 
           {/* Language Selector */}
           <div className="relative group p-2 flex items-center gap-1 cursor-pointer font-bold text-xs dark:text-white border dark:border-gray-700 rounded-lg">
-            <FiGlobe /> {i18n.language.toUpperCase()}
+            <FiGlobe /> {(i18n.language || 'en').toUpperCase()}
             <div className="absolute top-full right-0 mt-2 w-20 bg-white dark:bg-gray-800 hidden group-hover:block border rounded-lg shadow-lg">
               {['en', 'uz', 'ru'].map(l => (
                 <button key={l} onClick={() => changeLanguage(l)} className="block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 uppercase">{l}</button>
@@ -73,7 +73,7 @@ const Header = () => {
           </div>
 
           <button className="bg-red-500 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-red-600 transition-all">
-            {t('btn')}
+            {t('header.btn')}
           </button>
         </div>
 
@@ -83,7 +83,7 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu - To'liq tushadigan variant */}
+      {/* Mobile Menu */}
       <div className={`lg:hidden fixed inset-0 top-20 bg-white dark:bg-gray-900 z-[90] transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="p-8 flex flex-col gap-6">
           {navLinks.map((link, i) => (
@@ -94,7 +94,7 @@ const Header = () => {
               <button key={l} onClick={() => changeLanguage(l)} className={`px-4 py-2 rounded-lg border dark:text-white ${i18n.language === l ? 'bg-blue-600 text-white' : ''}`}>{l.toUpperCase()}</button>
             ))}
           </div>
-          <button className="w-full bg-red-500 text-white py-4 rounded-xl font-bold mt-4">{t('btn')}</button>
+          <button className="w-full bg-red-500 text-white py-4 rounded-xl font-bold mt-4">{t('header_btn')}</button>
         </div>
       </div>
     </header>

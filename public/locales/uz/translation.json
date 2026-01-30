@@ -1,0 +1,15 @@
+{
+  "header": {
+    "demos": "Demolar",
+    "pages": "Sahifalar",
+    "support": "Yordam",
+    "btn": "Boshlash"
+  },
+  "hero": {
+    "title": "Qayta ishlangan, qanday qurish",
+    "subtitle": "landing sahifasi!",
+    "description": "Omega bilan har qanday veb-saytdan ko'ra ko'proq tashrif buyuruvchilarni jalb qiladigan maxsus landing sahifalarini yarating.",
+    "getStarted": "Boshlash",
+    "watchVideo": "Intro videoni ko'rish"
+  }
+}
