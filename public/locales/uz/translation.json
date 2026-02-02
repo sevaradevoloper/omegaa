@@ -6,10 +6,49 @@
     "btn": "Boshlash"
   },
   "hero": {
-    "title": "Qayta ishlangan, qanday qurish",
+    "title": "Qayta ishlangan, qurish uslubingiz",
     "subtitle": "landing sahifasi!",
     "description": "Omega bilan har qanday veb-saytdan ko'ra ko'proq tashrif buyuruvchilarni jalb qiladigan maxsus landing sahifalarini yarating.",
     "getStarted": "Boshlash",
-    "watchVideo": "Intro videoni ko'rish"
+    "watchVideo": "Kirish videosini ko'rish"
+  },
+  "main": {
+    "features_section": {
+      "items": [
+        { "title": "Ko'p sonli maketlar", "desc": "Ko'plab noyob bloklar yordamida kod yozmasdan sahifani osongina qurishingiz mumkin." },
+        { "title": "To'liq moslashuvchan", "desc": "Sizning saytingiz barcha turdagi qurilmalarda mukammal ko'rinadi." },
+        { "title": "Yaxshi hujjatlashtirilgan", "desc": "Har bir qism batafsil tushuntirilgan qo'llanmaga ega." },
+        { "title": "Ajoyib qo'llab-quvvatlash", "desc": "Bizning jamoamiz har qanday savolingizga javob berishga tayyor." }
+      ],
+      "title": "Mukammal landing sahifasini tezda quring.",
+      "description": "Omega bilan tashrif buyuruvchilarni mijozga aylantiruvchi sahifalar yarating. Kodlash shart emas.",
+      "btn": "Barcha imkoniyatlar"
+    },
+    "hero_second": {
+      "title": "Dizayn va kodlashda ko'p vaqtni tejang.",
+      "description": "Omega yordamida murakkab kodlarsiz professional sahifalar yarating.",
+      "btn": "Boshlash",
+      "notif_tag": "Keyingi uchrashuv 30 daqiqadan so'ng",
+      "notif_title": "John bilan loyiha muhokamasi"
+    },
+    "benefits": {
+      "title": "Bu sizga kerak bo'lgan hamma narsadir.",
+      "description": "Biznesingizni rivojlantirish uchun eng yaxshi landing sahifa konstruktori.",
+      "deadline_tag": "Muddat: 29-oktabr, 2020",
+      "deadline_msg": "Sizda Daviddan yangi loyiha bor!",
+      "feature1_title": "50+ Noyob dizayn bloklari",
+      "feature1_subtitle": "Ehtiyotkorlik bilan kodlangan",
+      "feature2_title": "Mobile-First dizayn",
+      "feature2_subtitle": "Barcha qurilmalarda"
+    },
+    "testimonials": {
+      "title": "Mijozlarimiz Omegani yaxshi ko'rishadi",
+      "btn": "Barcha fikrlarni ko'rish",
+      "list": [
+        { "name": "Jonathan Taylor", "role": "CREATIVEX BOSH DIREKTORI", "text": "Dahshat! Omega-dan foydalanib yangi landing sahifasiga ega bo'lganimga ishonolmayman. Tahrirlash juda oson bo'ldi." },
+        { "name": "Gavin Park", "role": "ORBITAL BOSH DIREKTORI", "text": "Omega bir necha daqiqa ichida sahifa yaratish uchun ajoyib! Kodlash talab qilinmaydi." },
+        { "name": "Betty Norton", "role": "FRILANSER DIZAYNER", "text": "Mijozlar uchun sahifa yaratish kerak bo'lganda, Omega mening birinchi tanlovim. Toza va tez." }
+      ]
+    }
   }
 }

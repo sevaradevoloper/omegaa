@@ -31,8 +31,30 @@ const Header = () => {
     { title: t('header.support'), dropdown: null },
   ];
 
+  const [scrolled, setScrolled] = useState(false);
+
+  // Skrollni kuzatish
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-[100] bg-[var(--header-bg)] backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-all duration-300">
+   <header 
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 border-b
+        ${scrolled 
+          ? (isDark ? 'bg-[#030712]/90 border-gray-800 py-2' : 'bg-[#030712]/90 border-gray-800 py-2 shadow-sm') 
+          : 'bg-transparent border-transparent py-5'
+        } backdrop-blur-md`}
+    >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
         {/* Logo */}

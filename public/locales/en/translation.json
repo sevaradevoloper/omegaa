@@ -11,5 +11,72 @@
     "description": "Create custom landing pages with Omega that convert more visitors than any website.",
     "getStarted": "Get Started",
     "watchVideo": "Watch the intro video"
+  },
+  "main": {
+    "features_section": {
+      "title": "Build a perfect landing page fast.",
+      "description": "Create custom landing pages with Omega that converts more visitors than any website. With lots of unique blocks, you can easily build a page without coding.",
+      "btn": "Check all features",
+      "items": [
+        { "title": "Multiple Layouts", "desc": "With lots of unique blocks, you can easily build a page without coding." },
+        { "title": "Fully Responsive", "desc": "With lots of unique blocks, you can easily build a page without coding." },
+        { "title": "Well Documented", "desc": "With lots of unique blocks, you can easily build a page without coding." },
+        { "title": "Great Support", "desc": "With lots of unique blocks, you can easily build a page without coding." }
+      ]
+    },
+    "hero_second": {
+      "title": "Save tons of time on design & coding.",
+      "description": "Create custom landing pages with Omega that converts more visitors than any website. With lots of unique blocks, you can easily build a page.",
+      "btn": "Get Started",
+      "notif_tag": "Next meeting in 30 mins",
+      "notif_title": "Project Discussion with John"
+    },
+    "benefits": {
+      "title": "It's everything you'll ever need.",
+      "description": "Create custom landing pages with Omega that converts more visitors than any website.",
+      "deadline_tag": "Deadline: Oct 29, 2020",
+      "deadline_msg": "You've got a new project from David!",
+      "feature1_title": "50+ Unique Design Blocks",
+      "feature1_subtitle": "with Carefully Coded",
+      "feature2_title": "Mobile First Design",
+      "feature2_subtitle": "on Every Devices"
+    },
+    "testimonials": {
+      "title": "Customers are loving our Omega",
+      "btn": "See all testimonials",
+      "list": [
+        { "name": "Jonathan Taylor", "role": "CEO AT CREATIVEX", "text": "OMG! I cannot believe that I have got a brand new landing page after getting @Omega. It was super easy to edit and publish." },
+        { "name": "Gavin Park", "role": "CEO AT ORBITAL", "text": "@Omega is great for creating landing pages within minutes! It actually takes less time than what I expected. No coding required!" },
+        { "name": "Betty Norton", "role": "FREELANCE DESIGNER", "text": "Whenever I need to create a new landing page for clients, @Omega is my solution. It's clean, fast and very easy to use." }
+      ]
+    }
+  },
+  "footer": {
+    "cta": {
+      "title": "Get Started",
+      "desc": "Create custom landing pages with Omega that converts more visitors than any website. With lots of unique blocks, you can easily build a page without coding.",
+      "placeholder_name": "Your name",
+      "placeholder_email": "Email address",
+      "btn": "Get Started"
+    },
+    "columns": {
+      "about": {
+        "title": "About",
+        "links": ["Our mission", "Our story", "Team Members"]
+      },
+      "learn": {
+        "title": "Learn",
+        "links": ["Tutorials", "How it works", "F.A.Q"]
+      },
+      "stories": {
+        "title": "Stories",
+        "links": ["Blog", "Tech stories"]
+      },
+      "hire": {
+        "title": "Hire",
+        "links": ["Career", "Freelancers", "Trainee"]
+      }
+    },
+    "copyright": "© 2020 UXTheme, All Rights Reserved"
   }
 }
